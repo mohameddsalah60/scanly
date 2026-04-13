@@ -32,21 +32,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.green,
-
-      body: Center(child: Text('welcome')),
-    );
-  }
-}
