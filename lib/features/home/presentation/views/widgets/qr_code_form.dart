@@ -12,7 +12,7 @@ class QrCodeForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return Form(
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
             'Molto',
