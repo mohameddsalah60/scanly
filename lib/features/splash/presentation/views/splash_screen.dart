@@ -14,7 +14,9 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
-    return Center(child: Lottie.asset('lottie/qr_code.json', height: 200.h));
+    return Scaffold(
+      body: Center(child: Lottie.asset('lottie/qr_code.json', height: 200.h)),
+    );
   }
 
   @override

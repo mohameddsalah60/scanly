@@ -23,8 +23,11 @@ class MyApp extends StatelessWidget {
         initialRoute: AppRoutes.splash,
         onGenerateRoute: AppRouter.onGenerateRoute,
         theme: ThemeData(
-          scaffoldBackgroundColor: AppColors.scaffoldBackground,
-          primarySwatch: Colors.blue,
+          scaffoldBackgroundColor: AppColors.background,
+          textTheme: ThemeData.dark().textTheme.apply(
+            bodyColor: AppColors.secondary,
+            displayColor: AppColors.secondary,
+          ),
           fontFamily: 'Inter',
         ),
         debugShowCheckedModeBanner: false,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:scanly/features/home/presentation/views/home_screen.dart';
 
 import '../../features/splash/presentation/views/splash_screen.dart';
 import 'app_routes.dart';
@@ -8,6 +9,8 @@ class AppRouter {
     switch (settings.name) {
       case AppRoutes.splash:
         return MaterialPageRoute(builder: (context) => SplashScreen());
+      case AppRoutes.home:
+        return MaterialPageRoute(builder: (context) => HomeScreen());
       default:
         return MaterialPageRoute(
           builder:
