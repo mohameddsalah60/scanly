@@ -6,6 +6,14 @@ final class QrInitial extends QrState {}
 
 final class QrLoading extends QrState {}
 
-final class QrSuccses extends QrState {}
+final class QrSuccess extends QrState {
+  final ProductEntite prodcutEntite;
 
-final class QrFailure extends QrState {}
+  QrSuccess({required this.prodcutEntite});
+}
+
+final class QrFailure extends QrState {
+  final String message;
+
+  QrFailure(this.message);
+}

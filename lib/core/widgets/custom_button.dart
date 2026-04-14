@@ -12,19 +12,21 @@ class CustomButton extends StatelessWidget {
     this.color,
     this.textColor,
     this.icon,
+    this.isLoading = false,
   });
   final void Function()? onPressed;
   final String text;
   final Color? color;
   final Color? textColor;
   final IconData? icon;
+  final bool isLoading;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       width: MediaQuery.of(context).size.width,
       height: 55.h,
       child: ElevatedButton(
-        onPressed: onPressed,
+        onPressed: isLoading ? null : onPressed,
 
         style: ElevatedButton.styleFrom(
           backgroundColor: color ?? AppColors.secondary,
@@ -33,21 +35,26 @@ class CustomButton extends StatelessWidget {
           ),
           padding: const EdgeInsets.symmetric(vertical: 16),
         ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            icon != null
-                ? Icon(icon, size: 25.sp, color: AppColors.white)
-                : const SizedBox(),
-            icon != null ? SizedBox(width: 6.w) : const SizedBox(),
-            Text(
-              text,
-              style: AppTextStyles.fontWeight600Size16.copyWith(
-                color: textColor ?? Colors.white,
-              ),
-            ),
-          ],
-        ),
+        child:
+            isLoading
+                ? Center(
+                  child: CircularProgressIndicator(color: AppColors.white),
+                )
+                : Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    icon != null
+                        ? Icon(icon, size: 25.sp, color: AppColors.white)
+                        : const SizedBox(),
+                    icon != null ? SizedBox(width: 6.w) : const SizedBox(),
+                    Text(
+                      text,
+                      style: AppTextStyles.fontWeight600Size16.copyWith(
+                        color: textColor ?? Colors.white,
+                      ),
+                    ),
+                  ],
+                ),
       ),
     );
   }

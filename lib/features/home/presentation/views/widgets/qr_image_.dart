@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
 import '../../../../../core/utils/app_colors.dart';
+import '../../cubit/qr_cubit.dart';
 
 class QrCodeImage extends StatelessWidget {
   const QrCodeImage({super.key});
@@ -10,7 +12,7 @@ class QrCodeImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: QrImageView(
-        data: '',
+        data: context.watch<QrCubit>().qrData,
         version: QrVersions.auto,
         gapless: false,
         dataModuleStyle: QrDataModuleStyle(

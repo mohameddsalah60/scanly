@@ -13,13 +13,15 @@ class QrCodeForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Form(
-      key: context.read<QrCubit>().form,
+      key: context.read<QrCubit>().formKey,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
-            'Molto',
+            context.watch<QrCubit>().prodcutEntite.name,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
             style: AppTextStyles.fontWeight400Size14.copyWith(
               color: AppColors.secondary,
               fontSize: 16.sp,
@@ -27,7 +29,9 @@ class QrCodeForm extends StatelessWidget {
           ),
           SizedBox(height: 12.h),
           Text(
-            '099999999999',
+            context.watch<QrCubit>().prodcutEntite.barcode,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
             style: AppTextStyles.fontWeight400Size14.copyWith(
               color: AppColors.secondary,
               fontSize: 16.sp,
@@ -44,7 +48,7 @@ class QrCodeForm extends StatelessWidget {
                   return null;
                 }
               },
-              controller: context.read<QrCubit>().qrTextFieldController,
+              controller: context.read<QrCubit>().qrController,
               suffixIcon: Padding(
                 padding: EdgeInsets.only(right: 16.0),
                 child: Icon(Icons.mic_off_outlined, size: 26.sp),
@@ -52,7 +56,7 @@ class QrCodeForm extends StatelessWidget {
               hintText: 'Enter text or number to generate code...',
               onSaved: (value) {
                 value != null
-                    ? context.read<QrCubit>().qrTextFieldController.text = value
+                    ? context.read<QrCubit>().qrController.text = value
                     : null;
               },
             ),
