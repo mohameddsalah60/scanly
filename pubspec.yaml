@@ -30,12 +30,13 @@ environment:
 dependencies:
   cupertino_icons: ^1.0.8
   dartz: ^0.10.1
+  excel: ^4.0.6
   flutter:
     sdk: flutter
   flutter_bloc: ^9.1.1
   flutter_screenutil: ^5.9.3
   get_it: ^9.2.1
-  lottie: ^3.3.3
+  lottie: ^3.3.0
   qr_flutter: ^4.1.0
 
 dev_dependencies:

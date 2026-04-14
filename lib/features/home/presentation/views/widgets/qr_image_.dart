@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
 import '../../../../../core/utils/app_colors.dart';
@@ -9,8 +8,7 @@ class QrCodeImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 450.h,
+    return Expanded(
       child: QrImageView(
         data: '',
         version: QrVersions.auto,
