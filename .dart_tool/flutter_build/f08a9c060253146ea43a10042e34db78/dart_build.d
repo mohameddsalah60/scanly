@@ -1,0 +1,1 @@
+ /Users/icatch/Development/projects/scanly/.dart_tool/flutter_build/f08a9c060253146ea43a10042e34db78/dart_build_result.json:  /Users/icatch/Development/flutter/bin/cache/dart-sdk/version /Users/icatch/Development/projects/scanly/.dart_tool/package_config.json /Users/icatch/Development/projects/scanly/pubspec.yaml
